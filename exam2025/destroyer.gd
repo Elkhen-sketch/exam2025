@@ -6,7 +6,7 @@ extends CharacterBody2D
 @export var rotation_speed = 1.5
 var health_amount : int = 5
 var rotation_direction = 0
-var current_point : Vector2
+
 var DESTROYER_DEATH_EFFECT = preload("res://destroyer_death_effect.tscn")
 
 
