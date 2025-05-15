@@ -78,6 +78,7 @@ animations = [{
 [node name="destoyerdeath" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_oq0na")
 animation = &"destroyer_death_effect"
+autoplay = "destroyer_death_effect"
 frame = 8
 frame_progress = 1.0
 script = ExtResource("2_asadm")

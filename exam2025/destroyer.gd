@@ -34,3 +34,17 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 			get_tree().current_scene.add_child(DESTROYER_DEATH_EFFECT_instance)
 			queue_free()
 	
+
+
+func _on_hitbox_area_entered(area: Area2D) -> void:
+	print ("Hurt box area entered")
+	if area.get_parent().has_method("get_damage_amount"):
+		var node = area.get_parent()
+		health_amount -= node.get_damage_amount()
+		print("Health amount: ", health_amount)
+		
+		if health_amount <= 0:
+			var DESTROYER_DEATH_EFFECT_instance = DESTROYER_DEATH_EFFECT.instantiate()
+			DESTROYER_DEATH_EFFECT_instance.global_position = to_global(Vector2.ZERO)
+			get_tree().current_scene.add_child(DESTROYER_DEATH_EFFECT_instance)
+			queue_free() # Replace with function body.

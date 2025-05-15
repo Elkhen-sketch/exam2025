@@ -25,4 +25,5 @@ debug_color = Color(0.755636, 0.401357, 0.572881, 0.42)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
 shape = SubResource("CircleShape2D_qi2p4")
 
+[connection signal="area_entered" from="hitbox" to="." method="_on_hitbox_area_entered"]
 [connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
