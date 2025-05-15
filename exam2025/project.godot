@@ -44,6 +44,8 @@ shoot={
 
 [layer_names]
 
+2d_render/layer_1="PLayer"
+2d_render/layer_2="Enemy"
 2d_physics/layer_1="Ground"
 
 [rendering]

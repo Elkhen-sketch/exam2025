@@ -1,0 +1,87 @@
+[gd_scene load_steps=12 format=3 uid="uid://cxukkbuig1sef"]
+
+[ext_resource type="Texture2D" uid="uid://y1bq2ucp2oet" path="res://Destroyed.png" id="1_f4xv7"]
+[ext_resource type="Script" uid="uid://cga4e1suawu1w" path="res://animated_sprite_2d.gd" id="2_asadm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvsk4"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(0, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44u4o"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(192, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtjrv"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(384, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ddv1r"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(576, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cwb3"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(768, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qf34"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(960, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kwxf3"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(1152, 0, 192, 192)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p50ui"]
+atlas = ExtResource("1_f4xv7")
+region = Rect2(1344, 0, 192, 192)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oq0na"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvsk4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44u4o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtjrv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ddv1r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cwb3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6qf34")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kwxf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p50ui")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"destroyer_death_effect",
+"speed": 12.0
+}]
+
+[node name="destoyerdeath" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_oq0na")
+animation = &"destroyer_death_effect"
+frame = 8
+frame_progress = 1.0
+script = ExtResource("2_asadm")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true

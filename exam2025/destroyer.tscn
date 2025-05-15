@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://j2ttfro4hsba"]
+[gd_scene load_steps=15 format=3 uid="uid://j2ttfro4hsba"]
 
 [ext_resource type="Script" uid="uid://8usxtt4w5f2l" path="res://destroyer.gd" id="1_2avu4"]
 [ext_resource type="Texture2D" uid="uid://chuytxqmyrf1e" path="res://Move.png" id="2_2avu4"]
@@ -81,6 +81,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gtegk"]
 size = Vector2(96, 65)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8ircu"]
+size = Vector2(110, 68)
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_2avu4")
 
@@ -94,3 +97,13 @@ animation = &"shoot"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(20, -1)
 shape = SubResource("RectangleShape2D_gtegk")
+
+[node name="Hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+visibility_layer = 2
+position = Vector2(22, -1)
+shape = SubResource("RectangleShape2D_8ircu")
+debug_color = Color(0.860568, 0.309346, 0.490285, 0.42)
+
+[connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

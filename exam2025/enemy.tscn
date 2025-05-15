@@ -1,11 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://bgol44r86vsku"]
+[gd_scene load_steps=5 format=3 uid="uid://bgol44r86vsku"]
 
+[ext_resource type="Script" uid="uid://da5yfqtl70wbf" path="res://enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://drti1pwicexn8" path="res://Bomb_03.png" id="1_7k104"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
 radius = 34.0147
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_qi2p4"]
+radius = 31.7805
+
 [node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_4gyqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.159167, 0.151667)
@@ -14,3 +19,10 @@ texture = ExtResource("1_7k104")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_4gyqm")
 debug_color = Color(0.755636, 0.401357, 0.572881, 0.42)
+
+[node name="hitbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hitbox"]
+shape = SubResource("CircleShape2D_qi2p4")
+
+[connection signal="body_entered" from="hitbox" to="." method="_on_hitbox_body_entered"]
