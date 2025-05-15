@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://2c5mttg1t7ii"]
+
+[ext_resource type="Texture2D" uid="uid://bpwgh8sr7v76v" path="res://1.png" id="1_vonw3"]
+[ext_resource type="PackedScene" uid="uid://j2ttfro4hsba" path="res://destroyer.tscn" id="2_vonw3"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(9.16, 13.96)
+texture = ExtResource("1_vonw3")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_vonw3")]
+position = Vector2(-718, 327)

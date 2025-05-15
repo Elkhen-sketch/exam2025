@@ -1,0 +1,47 @@
+[gd_scene load_steps=4 format=3 uid="uid://g261njrjaana"]
+
+[ext_resource type="Texture2D" uid="uid://bpwgh8sr7v76v" path="res://1.png" id="1_0bhed"]
+[ext_resource type="PackedScene" uid="uid://j2ttfro4hsba" path="res://destroyer.tscn" id="2_m0rpm"]
+[ext_resource type="PackedScene" uid="uid://bgol44r86vsku" path="res://enemy.tscn" id="3_m0rpm"]
+
+[node name="level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(3.2, 5.76)
+texture = ExtResource("1_0bhed")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(1670, 9)
+scale = Vector2(3.2, 5.76)
+texture = ExtResource("1_0bhed")
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1691, 1845)
+scale = Vector2(3.2, 5.76)
+texture = ExtResource("1_0bhed")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(-82, 1783)
+scale = Vector2(3.2, 5.76)
+texture = ExtResource("1_0bhed")
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(-1856, 1761)
+scale = Vector2(3.2, 5.76)
+texture = ExtResource("1_0bhed")
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(-1793, -97)
+scale = Vector2(3.2, 5.76)
+texture = ExtResource("1_0bhed")
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(3528, 9)
+scale = Vector2(3.2, 5.76)
+texture = ExtResource("1_0bhed")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("2_m0rpm")]
+position = Vector2(-147, 63)
+
+[node name="enemy" parent="." instance=ExtResource("3_m0rpm")]
+position = Vector2(275, 43)

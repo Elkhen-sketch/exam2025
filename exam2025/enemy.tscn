@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://bgol44r86vsku"]
+
+[ext_resource type="Texture2D" uid="uid://drti1pwicexn8" path="res://Bomb_03.png" id="1_7k104"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 34.0147
+
+[node name="enemy" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.159167, 0.151667)
+texture = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_4gyqm")
+debug_color = Color(0.755636, 0.401357, 0.572881, 0.42)
